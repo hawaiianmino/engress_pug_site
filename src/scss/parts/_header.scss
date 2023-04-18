@@ -1,0 +1,185 @@
+@use '../base/function';
+@use '../base/mixin';
+@use '../base/base';
+
+body.fixed {
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+.header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 10;
+  @include mixin.mq(md,max) {
+    height: 65px;
+  }
+  .logo {
+    width: 136px;
+  }
+  nav {
+    @include mixin.mq(md,max) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba($color: #000000, $alpha: 0.9);
+      transform: translateX(100%);
+      transition-duration: .2s;
+      &.active {
+        transform: translateX(0);
+        transition-duration: .2s;
+      }
+    }
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    @include mixin.mq(md,max) {
+      display: block;
+      margin-top: 25%;
+    }
+    &__item {
+      margin-left: function.vw(1280,28);
+      @include mixin.mq(md,max) {
+        text-align: center;
+        font-size: function.fz(16);
+        padding: 15px;
+      }
+      @include mixin.mq(xl) {
+        margin-left: 28px;
+      }
+    }
+    &__link {
+      color: base.$base-color;
+      @include mixin.mq(md,max) {
+        color: #fff;
+      }
+    }
+  }
+  &__right {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+  }
+  &__cont {
+    text-align: right;
+    margin-right: function.vw(1280,23);
+    @include mixin.mq(lg,max) {
+      display: none;
+    }
+    @include mixin.mq(xl) {
+      margin-left: 23px;
+    }
+  }
+  .phone_number {
+    font-size: function.fz(16);
+    font-weight: bold;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 15px;
+      background: url('../img/icon-phone.svg') no-repeat center / contain;
+      margin-right: 5px;
+    }
+  }
+  .hour {
+    font-size: function.fz(12);
+  }
+  .btn_wrap {
+    display: flex;
+    align-items: center;
+    @include mixin.mq(md,max) {
+      margin-top: 30px;
+    }
+  }
+  .btn {
+    border-radius: 5px;
+    padding: 18px;
+    width: 140px;
+    font-size: function.fz(14);
+    @include mixin.mq(xl,max) {
+      width: 85px;
+    }
+    @include mixin.mq(md,max) {
+      width: 70%;
+    }
+  }
+  .btn + .btn {
+    margin-left: 10px;
+    @include mixin.mq(md,max) {
+      margin: 10px auto 0;
+    }
+  }
+}
+
+// ハンバーガーメニュー
+.hamburger{
+  position: absolute;/*ボタン内側の基点となるためrelativeを指定*/
+  background:transparent;
+  cursor: pointer;
+  width: 50px;
+  height:50px;
+  border-radius: 5px;
+  right: 0;
+  z-index: 20;
+}
+
+/*ボタン内側*/
+.hamburger span{
+  display: inline-block;
+  transition: all .4s;/*アニメーションの設定*/
+  position: absolute;
+  left: 14px;
+  height: 3px;
+  border-radius: 2px;
+  background: base.$base-color;
+  width: 45%;
+  }
+
+.hamburger span:nth-of-type(1) {
+  top:15px; 
+}
+
+.hamburger span:nth-of-type(2) {
+  top:23px;
+}
+
+.hamburger span:nth-of-type(3) {
+  top:31px;
+}
+
+.hamburger.active span {
+  background-color: #fff;
+}
+
+/*activeクラスが付与されると線が回転して×に*/
+.hamburger.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+
+.hamburger.active span:nth-of-type(2) {
+  opacity: 0;/*真ん中の線は透過*/
+}
+
+.hamburger.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}

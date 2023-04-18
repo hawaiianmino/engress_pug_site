@@ -1,0 +1,40 @@
+section.contact.section_padding
+  .container
+    p.lead_text 弊社に興味を持って頂きありがとうございます。商談やサービスのご利用、資料請求について下記のフォームよりお問い合わせください。
+    form.form(action="")
+      .form__item
+        label(for="corporate") 会社名 
+        input(type="text", name="corporate", id="corporate" placeholder="Engress")
+      .form__item
+        label(for="name") 氏名 
+        input(type="text", name="name", id="name", placeholder="田中 太郎")
+      .form__item
+        label(for="email") 氏名 
+        input(type="email", name="email", id="email", placeholder="example@example.com")
+      .form__item
+        label(for="phone") 電話番号 
+        input(type="phone", name="phone", id="phone", placeholder="01-1234-5678")
+      .form__item
+        p.form__text お問い合わせの種類を選択してください<strong>（資料請求の方は資料請求を選択ください）</strong>
+        .radio-field
+          label
+            input(type="radio" name="contact" value="work")
+            span 商談のご相談
+          label
+            input(type="radio" name="contact" value="service")
+            span サービスに関するお問い合わせ
+          label
+            input(type="radio" name="contact" value="document")
+            span 資料請求
+          label
+            input(type="radio" name="contact" value="other")
+            span その他
+      .form__item
+        label(for="content")
+        textarea(name="content", cols="30", rows="10", id="content")
+      p.form__text.privacy_text <a href="#" class="form__link">プライバシーポリシー</a>に同意の上、送信ください。
+      .form__item.check
+        input(type="checkbox", name="policy" value="policy" id="policy")
+        label(for="policy", id="policy") プライバシーポリシーに同意する
+      .form__item
+        button(type="submit") 送信する

@@ -1,0 +1,23 @@
+extend ../layouts/_default
+append value
+  - const title = "お知らせ | Engress";
+  - const description = "アバウトのディスクリプション";
+  - const keywords = "キーワード,キーワード2,キーワード3";
+  - const path = "..";
+  - const location = "info";
+  - const section_title = "お知らせ"
+
+block header
+  include ../components/layout/_header
+  include ../components/layout/_section_header
+  include ../components/layout/_bread_crumb
+
+block main
+  include ../components/project/info/_info
+  include ../components/layout/_pager
+
+block footer
+  include ../components/layout/_footer
+
+block js 
+  include ../components/layout/_js

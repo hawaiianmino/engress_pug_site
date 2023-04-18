@@ -1,0 +1,131 @@
+@use '../base/function';
+@use '../base/mixin';
+@use '../base/base';
+
+.blog-single {
+  .container {
+    display: flex;
+    max-width: 895px;
+  }
+  &__inner {
+    width: calc((586 / 895) * 100%);
+  }
+  .single__cont .img {
+    max-width: 100%;
+  }
+}
+
+.single-title-wrap {
+  .single__title {
+    margin-top: 30px;
+  }
+  .tag {
+    font-size: function.fz(12);
+    color: #fff;
+    background-color: base.$base-color;
+    padding: function.em(10,12) function.em(25,12);
+    display: inline-block;
+  }
+}
+
+.sns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar {
+  width: calc((269 / 895) * 100%);
+  margin-left: 36px;
+  &__title {
+    font-size: function.fz(21);
+    color: #fff;
+    background-color: base.$base-color;
+    padding: 18px;
+    text-align: center;
+    &:nth-of-type(n + 2) {
+      margin-top: 27px;
+    }
+  } 
+}
+.sidebar-article {
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  &__thumb {
+    width: 100px;
+    flex-shrink: 0;
+  }
+  &__title {
+    width: calc((152 / 269) * 100%);
+    margin-left: 17px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  &__link {
+    text-decoration: underline;
+    line-height: 2;
+    font-size: function.fz(12);
+    color: base.$base-color;
+  }
+}
+.recommend-wrap {
+  margin-top: 60px;
+}
+.recommend-article {
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-start;
+  + .recommend-article {
+    margin-top: 28px;
+  }
+  &__thumb {
+    flex-shrink: 0;
+    position: relative;
+    img {
+      height: 128px;
+      width: 210px;
+      object-fit: cover;
+    }
+  }
+  &__cont {
+    margin-left: 32px;
+  }
+  &__link {
+    font-size: function.fz(18);
+    font-weight: bold;
+    line-height: 1.5;
+    text-decoration: underline;
+    margin-top: 29px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 8px 13px;
+    color: #fff;
+    background-color: base.$base-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+.single h2.recommend-article__title {
+  border-left: none;
+  font-size: function.fz(26);
+}
+.category-list {
+  padding-left: 1em;
+  &__item {
+    list-style: disc;
+    font-size: function.fz(16);
+    font-weight: bold;
+    + .category-list__item {
+      margin-top: 16px;
+    }
+  }
+  a {
+    color: base.$base-color
+  }
+}

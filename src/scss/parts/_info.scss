@@ -1,0 +1,39 @@
+@use '../base/function';
+@use '../base/mixin';
+@use '../base/base';
+
+.info-list.section_padding {
+  padding-bottom: 0;
+}
+.section-header.info {
+  background: url('../img/bg-section-info.png') no-repeat center / cover;
+}
+.info-wrap {
+  margin-top: 45px;
+  &__item {
+    display: flex;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-top: 1px solid base.$main-color;
+    &:last-of-type {
+      border-bottom: 1px solid base.$main-color;
+    }
+  }
+  &__link {
+    text-decoration: underline;
+    color: base.$base-color;
+  }
+  &__date {
+    color: base.$base-color;
+    margin-right: 50px;
+    flex-shrink: 0;
+  }
+  &__title {
+    flex: 1;
+    line-height: 1.5;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

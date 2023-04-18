@@ -1,0 +1,18 @@
+extend ../layouts/_default
+append value
+  - const title = "ブログの個別記事 | Engress";
+  - const description = "アバウトのディスクリプション";
+  - const keywords = "キーワード,キーワード2,キーワード3";
+  - const path = "..";
+  - const location = "blog-single";
+  - const section_title = "ブログの個別記事"
+
+block header
+  include ../components/layout/_header
+  include ../components/layout/_bread_crumb
+
+block main
+  include ../components/project/blog-single/_blog-single
+
+block footer
+  include ../components/layout/_footer

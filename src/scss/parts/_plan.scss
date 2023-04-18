@@ -1,0 +1,118 @@
+@use '../base/function';
+@use '../base/mixin';
+@use '../base/base';
+
+/* PLAN */
+/* ======================================= */
+.section-header.plan {
+  background: url('../img/bg-section-plan.png') no-repeat center / cover;
+}
+.plan {
+  .section_text {
+    margin-top: 45px;
+  }
+}
+.chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 658px;
+  margin: 60px auto 0;
+  &__box {
+    font-size: function.fz(22);
+    font-weight: bold;
+    padding: 10px;
+    width: 280px;
+    height: 90px;
+    background-color: base.$base-color;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    &:nth-of-type(2) {
+      @include mixin.mq(md,max) {
+        margin-top: 20px;
+      }
+    }
+  }
+  @include mixin.mq(md,max) {
+    flex-direction: column;
+  }
+  .icon-plus {
+    font-size: 19px;
+    @include mixin.mq(md,max) {
+      margin-top: 20px;
+    }
+  }
+}
+
+/* PRICE */
+/* ======================================= */
+.price__boxes {
+  display: flex;
+  align-items: flex-end;
+  white-space: nowrap;
+}
+.price-box {
+  margin-top: 70px;
+  width: 25%;
+  @include mixin.mq(md,max) {
+    width: initial;
+  }
+  + .price-box {
+    margin-left: 7px;
+  }
+  &__inner {
+    min-height: 414px;
+    border: 1px solid #1b224c;
+    border-top: transparent;
+  }
+  &__title {
+    background-color: base.$base-color;
+    color: #fff;
+    font-weight: bold;
+    padding: 18px;
+    text-align: center;
+    &.recommend {
+      background-color: base.$accent-color;
+    }
+    .recommend-text {
+      display: inline-block;
+      margin-bottom: 19px;
+    }
+  }
+  &__price {
+    text-align: center;
+    padding: 36px 20px;
+  }
+  .price {
+    font-size: function.fz(25);
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+  &__list {
+    text-align: center;
+    padding: 0 20px 20px 20px;
+  }
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    &::before {
+      content: '';
+      display: inline-block;
+      min-width: 14px;
+      min-height: 9px;
+      background: url(../img/icon-check.jpg) no-repeat center / contain;
+      margin-right: 11px;
+      margin-top: 5px;
+    }
+    + .price-box__item {
+      margin-top: 23px;
+    }
+    &.no_check::before {
+      content: none;
+    }
+  }
+}

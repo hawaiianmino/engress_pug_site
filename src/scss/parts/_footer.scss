@@ -1,0 +1,118 @@
+@use '../base/function';
+@use '../base/mixin';
+@use '../base/base';
+
+
+/* FOOTER */
+/* ======================================= */
+// footer-cta
+.footer-cta {
+  background: url('../img/bg-footer-cta.jpg') no-repeat center / cover;
+  .section_title {
+    color: #fff;
+  }
+  .btn_wrap {
+    text-align: center;
+    margin-top: 16px;
+  }
+  .text_link {
+    display: inline-block;
+    margin-top: 22px;
+  }
+}
+// phone
+.phone {
+  padding: 20px 0;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    @include mixin.mq(md,max) {
+      flex-direction: column;
+      align-items: center;
+    }
+    > p + p {
+      margin-left: 20px;
+      @include mixin.mq(md,max) {
+        margin-left: initial;
+        margin-top: 10px;
+      }
+    }
+  }
+  &__text {
+    font-weight: bold;
+  }
+  &__number {
+    font-size: function.fz(36);
+  }
+  &__hours {
+    font-weight: normal;
+  }
+}
+// footer 
+.footer {
+  background-color: base.$base-color;
+  padding-top: 35px;
+  padding-bottom: 69px;
+  @include mixin.mq(md,max) {
+    padding-bottom: 35px;
+  }
+}
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  @include mixin.mq(md,max) {
+    flex-direction: column;
+  }
+}
+.footer-nav {
+  display: flex;
+  align-items: center;
+  @include mixin.mq(md,max) {
+    justify-content: center;
+  }
+  &__item {
+    padding: 3px 21px;
+    border-right: 1px solid #fff;
+    @include mixin.mq(md,max) {
+      padding: 3px 10px;
+    }
+    &:last-child {
+      border-right: none;
+    }
+  }
+  &__link {
+    color: #fff;
+  }
+}
+.footer-cont {
+  color: #fff;
+  text-align: right;
+  @include mixin.mq(md,max) {
+    margin-top: 20px;
+    text-align: center;
+  }
+  &__phone {
+    font-weight: bold;
+    margin-top: 27px;
+  }
+  &__hour {
+    font-size: function.fz(12);
+    font-weight: normal;
+    margin-top: 13px;
+
+  }
+}
+.footer-logo {
+  img {
+    max-width: 197px;
+  }
+}
+.footer-copy {
+  padding: 12px 0;
+  .container {
+    font-size: function.fz(12);
+    font-weight: bold;
+    text-align: right;
+  }
+}

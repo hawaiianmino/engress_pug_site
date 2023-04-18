@@ -1,0 +1,17 @@
+.bread-crumb
+  ul.container
+    li.bread-crumb__item
+      a.bread-crumb__link.link(href="/") ホーム
+    li.bread-crumb__item
+      if location === "plan"
+        span.bread-crumb__link コース・料金
+      if location === "blog"
+        span.bread-crumb__link ブログ
+      if location === "info"
+        span.bread-crumb__link お知らせ
+      if location === "single"
+        span.bread-crumb__link 個別記事
+      if location === "blog-single"
+        span.bread-crumb__link ブログの個別記事
+      if location === "contact"
+        span.bread-crumb__link お問い合わせ

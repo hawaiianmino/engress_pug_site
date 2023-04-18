@@ -1,0 +1,88 @@
+@use '../base/function';
+@use '../base/mixin';
+@use '../base/base';
+
+.section-header.blog {
+  background: url('../img/bg-section-blog.jpg') no-repeat center / cover;
+}
+.blog__wrap {
+  margin-top: 60px;
+  @include mixin.mq(md,max) {
+    margin-top: 30px;
+  }
+}
+.news {
+  // margin-top: 60px;
+   + .news {
+    margin-top: 60px;
+    @include mixin.mq(md,max) {
+      margin-top: 30px;
+    }
+   }
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    @include mixin.mq(md,max) {
+      flex-direction: column;
+    }
+  }
+  &__img {
+    position: relative;
+    @include mixin.mq(md,max) {
+      width: 100%;
+    }
+    img {
+      width: 240px;
+      height: 179px;
+      object-fit: cover;
+      @include mixin.mq(md,max) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  &__tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: base.$base-color;
+    color: #fff;
+    padding: 8px 13px;
+  }
+  &__cont {
+    margin-left: function.vw(1280,50);
+    color: base.$base-color;
+    @include mixin.mq(xl) {
+      margin-left: 50px;
+    }
+    @include mixin.mq(md,max) {
+      margin-left: initial;
+      margin-top: 15px;
+    }
+  }
+  &__title {
+    font-size: function.fz(26);
+    font-weight: bold;
+    line-height: 1.5;
+    text-decoration: underline;
+    margin-top: 20px;
+    @include mixin.mq(md,max) {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+  }
+  &__text {
+    line-height: 1.5;
+    margin-top: 20px;
+    @include mixin.mq(md,max) {
+      margin-top: 10px;
+    }
+  }
+  &__title,&__text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}

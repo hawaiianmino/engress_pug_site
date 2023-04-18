@@ -1,0 +1,26 @@
+extend layouts/_default
+append value
+  - const title = "Engress";
+  - const description = "トップページのディスクリプション";
+  - const keywords = "キーワード,キーワード2,キーワード3";
+  - const path = ".";
+  - const location = "top";
+
+block header
+  include components/layout/_header
+
+block main
+  include components/project/top/_fv
+  include components/project/top/_problem
+  include components/project/top/_strength
+  include components/project/top/_cta
+  include components/project/top/_case
+  include components/project/top/_flow
+  include components/project/top/_question
+  include components/project/top/_blog
+
+block footer
+  include components/layout/_footer
+
+block js 
+  include components/layout/_js
