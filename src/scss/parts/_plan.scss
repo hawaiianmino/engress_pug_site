@@ -51,11 +51,11 @@
 .price__boxes {
   display: flex;
   align-items: flex-end;
-  white-space: nowrap;
 }
 .price-box {
   margin-top: 70px;
   width: 25%;
+  min-width: 210px;
   @include mixin.mq(md,max) {
     width: initial;
   }
