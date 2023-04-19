@@ -12,7 +12,6 @@
   }
 }
 .news {
-  // margin-top: 60px;
    + .news {
     margin-top: 60px;
     @include mixin.mq(md,max) {
